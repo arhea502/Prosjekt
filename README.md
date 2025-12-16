@@ -1,7 +1,7 @@
 # Terminoppgave: Nettbutikk
 
 ## Beskrivelse
-Dette prosjektet er en enkel nettbutikk laget med **Flask** og **MariaDB** på en **Raspberry Pi**.  
+Dette prosjektet er en enkel nettbutikk laget med **Flask** og **MariaDB** på en Raspberry Pi.  
 Formålet er å hente data fra en database og vise det i en HTML-tabell ved hjelp av Flask og Jinja2.
 
 ---
@@ -11,18 +11,17 @@ Formålet er å hente data fra en database og vise det i en HTML-tabell ved hjel
 - Flask  
 - MariaDB  
 - Jinja2  
-- Git / GitHub  
+- Git / GitHub
 
 ---
 
 ## Filstruktur
-
 Terminoppgave/
 │
 ├── app.py
 ├── db.py
 ├── templates/
-│ └── index2.html
+│   └── index2.html
 ├── .venv/
 └── README.md
 
@@ -30,9 +29,9 @@ Terminoppgave/
 ---
 
 ## Databaseoppsett
-MariaDB må være installert og kjøre på `localhost`.  
-
+MariaDB må være installert og kjøre på localhost.  
 Eksempel på databasefunksjon i `db.py`:
+
 ```python
 import mariadb
 
@@ -51,15 +50,10 @@ def hentdata():
     except mariadb.Error as e:
         print(f"Database error: {e}")
         return []
+```
 
-    Tips: For mer lesbar Jinja2, kan du bruke dictionary-cursor:
-
-    cursor = conn.cursor(dictionary=True)
-
-Flask-applikasjon
-
-Eksempel på enkel Flask-app (app.py):
-
+# Flaske-applikasjon
+``` python
 from flask import Flask, render_template
 from db import hentdata
 
@@ -72,11 +66,9 @@ def home():
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5001, debug=True)
+```
 
 HTML-template
-
-Eksempel på index2.html:
-
 <!DOCTYPE html>
 <html lang="no">
 <head>
@@ -84,56 +76,62 @@ Eksempel på index2.html:
     <title>Nettbutikk</title>
 </head>
 <body>
-    <h1>Produkter</h1>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Navn</th>
-            <th>Pris</th>
-        </tr>
-        {% for product in products %}
-        <tr>
-            <td>{{ product[0] }}</td>
-            <td>{{ product[1] }}</td>
-            <td>{{ product[2] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+
+<h1>Produkter</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Navn</th>
+        <th>Pris</th>
+    </tr>
+
+    {% for product in products %}
+    <tr>
+        <td>{{ product[0] }}</td>
+        <td>{{ product[1] }}</td>
+        <td>{{ product[2] }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
 </body>
 </html>
 
-Git / GitHub-håndtering
-Konfigurer bruker
+## Git / GitHub-håndtering
 
+# Konfigurer bruker
 git config --global user.name "Arian H"
 git config --global user.email "arian@example.com"
 
-Sjekk status og remote
-
+# Sjekk status og remote
 git status
 git remote -v
-# Sørg for at det ikke finnes .git-mapper i undermapper
+Sørg for at det ikke finnes .git mapper i undermapper.
 
-Oppdater remote og push
-
+# Oppdater remote og push
 git remote set-url origin https://github.com/arhea502/Prosjekt.git
 git push -u origin main
 
-Sjekkliste før innlevering
+# Sjekkliste før innlevering
+git branch           # Sjekk at du er på main/master
+git log --oneline    # Sjekk commits
+find . -type d -name ".git"  # Kun ./.git skal vises
 
-git branch         # Sjekk at du er på main/master
-git log --oneline  # Sjekk commits
-find . -type d -name ".git" # Kun ./.git skal vises
 
-Virtuelt miljø
-
-Aktiver miljøet:
+## Tips
+source .venv/bin/activate
 
 source .venv/bin/activate
 
-Oppdater .gitignore for å ignorere:
+# Oppdater .gitignore for å ignorere:
 
 .venv/
 __pycache__/
 *.pyc
 .DS_Store
+
+    For mer lesbar Jinja2, kan du bruke dictionary-cursor:
+
+cursor = conn.cursor(dictionary=True)
