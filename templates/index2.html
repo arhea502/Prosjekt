@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Nettbutikk</title>
+</head>
+<body>
+
+<h1>Produkter</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Navn</th>
+        <th>Pris</th>
+    </tr>
+
+    {% for product in products %}
+    <tr>
+        <td>{{ product[0] }}</td>
+        <td>{{ product[1] }}</td>
+        <td>{{ product[2] }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
