@@ -1,0 +1,5 @@
+Flask==2.3.3
+mysql-connector-python
+Flask-Login
+Flask-WTF
+WTForms

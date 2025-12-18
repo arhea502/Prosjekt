@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<form>
+  <input name="q" placeholder="Search">
+  <select name="category">
+    <option value="">All</option>
+    <option>Shirts</option>
+    <option>Hoodies</option>
+    <option>Pants</option>
+  </select>
+  <input name="price" placeholder="Max price">
+  <button>Filter</button>
+</form>
+
+<div class="grid">
+{% for p in products %}
+  <div class="card">
+    <img src="{{ p.image }}" loading="lazy">
+    <h3>{{ p.name }}</h3>
+    <p>{{ p.price }} NOK</p>
+    <a href="/product/{{ p.id }}">View</a>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

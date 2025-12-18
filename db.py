@@ -1,4 +1,16 @@
 import mariadb
+import mysql.connector
+
+import mysql.connector
+
+def get_db():
+    return mysql.connector.connect(
+        host="localhost",
+        user="arian",
+        password="gamemode c",
+        database="Nettbutikk"
+    )
+
 
 
 def hentdata():

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<img src="{{ product.image }}">
+<h1>{{ product.name }}</h1>
+<p>{{ product.description }}</p>
+<p>{{ product.price }} NOK</p>
+<a href="/add-to-cart/{{ product.id }}">Add to cart</a>
+
+<h3>Reviews</h3>
+{% for r in reviews %}
+⭐ {{ r.rating }} – {{ r.comment }}<br>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<nav>
+    <a href="/">Store</a>
+    <a href="/cart">Cart ({{ session.cart|length if session.cart else 0 }})</a>
+</nav>
+{% block content %}{% endblock %}
+</body>
+</html>

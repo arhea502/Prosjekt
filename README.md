@@ -135,3 +135,104 @@ __pycache__/
     For mer lesbar Jinja2, kan du bruke dictionary-cursor:
 
 cursor = conn.cursor(dictionary=True)
+
+
+
+
+
+Slett alt untatt db.py og app.py
+js fil slett.
+alle httml untatt index. slett
+controll z på db og app.py
+
+
+def get_db_connection():
+    return mariadb.connect(
+        user="arian",
+        password="gamemode c",
+        host="localhost",
+        port=3306,
+        database="Nettbutikk"
+    )
+
+
+ Fancy T-Shirt
+Fancy T-Shirt
+
+Very cool shirt
+299.00 NOK
+Fancy T-Shirt
+Fancy T-Shirt
+
+Very cool shirt
+299.00 NOK
+Cool Hoodie
+Cool Hoodie
+
+Warm and stylish hoodie
+599.00 NOK
+Classic Jeans
+Classic Jeans
+
+Comfortable blue jeans
+799.00 NOK
+Sneakers
+Sneakers
+
+Lightweight everyday sneakers
+999.00 NOK
+Baseball Cap
+Baseball Cap
+
+Adjustable cotton cap
+199.00 NOK
+Leather Belt
+Leather Belt
+
+Genuine leather belt
+349.00 NOK
+Summer Shorts
+Summer Shorts
+
+Breathable summer shorts
+399.00 NOK
+Winter Jacket
+Winter Jacket
+
+Insulated jacket for cold weather
+1499.00 NOK
+Socks (3-pack)
+Socks (3-pack)
+
+Soft cotton socks
+149.00 NOK
+Beanie Hat
+Beanie Hat
+
+Warm knitted beanie
+179.00 NOK
+Running Shoes
+Running Shoes
+
+Comfortable shoes for running
+1199.00 NOK
+Denim Jacket
+Denim Jacket
+
+Classic denim jacket
+1299.00 NOK
+Graphic Tee
+Graphic Tee
+
+T-shirt with printed design
+329.00 NOK
+Zip Hoodie
+Zip Hoodie
+
+Hoodie with front zipper
+649.00 NOK
+Cargo Pants
+Cargo Pants
+
+Pants with multiple pockets
+899.00 NOK
